@@ -18,7 +18,7 @@ const[products,setproducts]=useState([])
 const[reload,setreload]=useState(false)
 const getAllproduct=async()=>{
     const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/product/all",{
-        headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+        headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
       
     });
     if(resp.status==200){
@@ -30,7 +30,7 @@ const getAllproduct=async()=>{
 const deleteproduct=async(id)=>{
     const resp=await fetch(`https://hilarious-kerchief-crab.cyclic.app/admin/product/${id}`,{
         method:"DELETE",
-        headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+        headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
       
     });
     if(resp.status==200){

@@ -18,7 +18,7 @@ const[users,setusers]=useState([])
 const[reload,setreload]=useState(false)
 const getAllusers=async()=>{
     const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/user/all",{
-        headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+        headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
       
     });
     if(resp.status==200){
@@ -30,7 +30,7 @@ const getAllusers=async()=>{
 const deleteuser=async(id)=>{
     const resp=await fetch(`https://hilarious-kerchief-crab.cyclic.app/admin/user/${id}`,{
         method:"DELETE",
-        headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+        headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
       
     });
     if(resp.status==200){
@@ -41,7 +41,7 @@ const deleteuser=async(id)=>{
 const roleswitch=async(id)=>{
     const resp=await fetch(`https://hilarious-kerchief-crab.cyclic.app/admin/user/${id}`,{
         method:"PATCH",
-        headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+        headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
       
     });
     if(resp.status==200){
