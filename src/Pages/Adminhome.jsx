@@ -18,7 +18,7 @@ const Adminhome=()=>{
     const[users,setusers]=useState([])
     const getCountofproduct=async()=>{
         const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/product/count",{
-            headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+            headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
           
         });
         const data=await resp.json()
@@ -29,7 +29,7 @@ const Adminhome=()=>{
     }
     const getCountofuser=async()=>{
         const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/user/count",{
-            headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+            headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
           
         });
         const data=await resp.json()
@@ -39,7 +39,7 @@ const Adminhome=()=>{
     }
     const getCountofcart=async()=>{
         const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/cart/count",{
-            headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+            headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
           
         });
         const data=await resp.json()
@@ -50,7 +50,7 @@ const Adminhome=()=>{
 
     const getAllusers=async()=>{
         const resp=await fetch("https://hilarious-kerchief-crab.cyclic.app/admin/user/limit",{
-            headers:{"authorization":`bearer ${localStorage.getItem("JWTTOKEN")}`},
+            headers:{"authorization":`bearer ${JSON.parse(localStorage.getItem("JWTTOKEN"))}`},
           
         });
         const data=await resp.json()
